@@ -74,3 +74,11 @@ This exercise is maintained and funded by
 
 The names and logos for Upcase and thoughtbot are registered trademarks of
 thoughtbot, inc.
+
+
+## Tips
+* prefer sequel string over includes/references because
+** it's depending on an implementation detail that could change
+** it's less declarative
+** the query is less readable because it has to alias all columns in order to avoid potential ambiguity
+** can be less performant if you don't need all the records loaded (because it eager loads)
